@@ -32,6 +32,9 @@ struct TransactionstView: View {
                 await transactionsVM.getTransactions()
             }
         }
+        Spacer()
+        Text("Account Balance:      \(transactionsVM.accountBalanceStr)")
+            .bold()
     }
 }
 

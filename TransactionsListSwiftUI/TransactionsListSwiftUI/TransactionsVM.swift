@@ -11,6 +11,7 @@ import SwiftUI
 @MainActor
 class TransactionsVM : ObservableObject {
     @Published var transactionsArrayTransformed = [TransactionModelTransformed]()
+    @Published var accountBalanceStr : String = ""
     var transactionsArray = [TransactionModel]()
     
     func getTransactions() async {
@@ -20,6 +21,7 @@ class TransactionsVM : ObservableObject {
             transactionsArrayTransformed = convertModel(transactionsModel: transactionsArray)
             transactionsArrayTransformed = transactionsArrayTransformed.sorted {$0.date > $1.date }
             transactionsArrayTransformed = removeSameIdTransactions(transactions: transactionsArrayTransformed)
+            getBalance(transactions: transactionsArrayTransformed)
         } catch JsonError.decodingError {
             print("Decoding Error")
         } catch JsonError.codeError {
@@ -67,6 +69,13 @@ class TransactionsVM : ObservableObject {
         } else {
             return nil
         }
+    }
+    private func getBalance(transactions: [TransactionModelTransformed]){
+        var accountBalance : Double = 0
+        for transaction in transactions {
+            accountBalance += transaction.amount
+        }
+        accountBalanceStr = String(format: "%.2f", accountBalance)
     }
 
 }
