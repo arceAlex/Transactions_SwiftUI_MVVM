@@ -46,6 +46,7 @@ class TransactionsVM : ObservableObject {
         }
         return arrayTransformed
     }
+             //Remove transactions with the same id, displaying only the most recent one.
     private func removeSameIdTransactions(transactions: [TransactionModelTransformed]) -> [TransactionModelTransformed] {
         var transactionsNoRepitedId = transactions
         var ids : [Int] = []
