@@ -17,12 +17,9 @@ class TransactionsVM : ObservableObject {
         do {
             let data = try await TransactionsApi.fetchTransactions()
             transactionsArray = data
-            print(transactionsArray.count)
             transactionsArrayTransformed = convertModel(transactionsModel: transactionsArray)
             transactionsArrayTransformed = transactionsArrayTransformed.sorted {$0.date > $1.date }
-            print(transactionsArrayTransformed.count)
             transactionsArrayTransformed = removeSameIdTransactions(transactions: transactionsArrayTransformed)
-            print(transactionsArrayTransformed.count)
         } catch JsonError.decodingError {
             print("Decoding Error")
         } catch JsonError.codeError {
