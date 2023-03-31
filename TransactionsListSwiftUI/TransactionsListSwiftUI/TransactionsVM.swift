@@ -12,6 +12,8 @@ import SwiftUI
 class TransactionsVM : ObservableObject {
     @Published var transactionsArrayTransformed = [TransactionModelTransformed]()
     @Published var accountBalanceStr : String = ""
+    @Published var positiveBalance : Bool = true
+    
     var transactionsArray = [TransactionModel]()
     
     func getTransactions() async {
@@ -74,6 +76,11 @@ class TransactionsVM : ObservableObject {
         var accountBalance : Double = 0
         for transaction in transactions {
             accountBalance += transaction.amount
+        }
+        if accountBalance >= 0 {
+            positiveBalance = true
+        } else if accountBalance < 0 {
+            positiveBalance = false
         }
         accountBalanceStr = String(format: "%.2f", accountBalance)
     }
