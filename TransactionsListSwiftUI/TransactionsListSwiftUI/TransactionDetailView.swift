@@ -13,13 +13,23 @@ struct TransactionDetailView: View {
     var description: String
     var totalAmount: Double
     var body: some View {
-        VStack{
-            Text(String(amount))
-            Text(String(fee))
+        VStack(alignment: .leading){
             Text(description)
-            Text(String(totalAmount))
+                .font(.title)
+                .bold()
+            Text("Amount: \(String(amount)) €")
+                .font(.title2)
+            Text("Fee: \(String(fee)) €")
+                .font(.title2)
+            Text("Total: \(String(totalAmount)) €")
+                .font(.title2)
         }
+        .padding(20)
     }
 }
 
-
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        TransactionDetailView(amount: 24, fee: -12, description: "Hi, this is the description of my transaction", totalAmount: 12)
+    }
+}
