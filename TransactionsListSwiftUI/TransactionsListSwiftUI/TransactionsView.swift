@@ -7,23 +7,26 @@
 
 import SwiftUI
 
-struct TransactionstView: View {
+struct TransactionsView: View {
     @StateObject var transactionsVM = TransactionsVM()
+    @State var didLoad: Bool = false
     var body: some View {
         NavigationView{
             VStack{
                 List(transactionsVM.transactionsArrayTransformed,id: \.id) { transaction in
-                    HStack(alignment: .center){
-                        Text(String(transaction.date.formatted(date: .numeric, time: .omitted)))
-                        Spacer()
-                        Text(String("\(transaction.totalAmount) €"))
-                        Spacer()
-                        if transaction.amount < 0 {
-                            Image(systemName: "circle.fill")
-                                .foregroundColor(.red)
-                        } else {
-                            Image(systemName: "circle.fill")
-                                .foregroundColor(.green)
+                    NavigationLink(destination: TransactionDetailView(amount: transaction.amount, fee: transaction.fee ?? 0, description: transaction.description ?? "No description", totalAmount: transaction.totalAmount)){
+                        HStack(alignment: .center){
+                            Text(String(transaction.date.formatted(date: .numeric, time: .omitted)))
+                            Spacer()
+                            Text(String("\(transaction.totalAmount) €"))
+                            Spacer()
+                            if transaction.amount < 0 {
+                                Image(systemName: "circle.fill")
+                                    .foregroundColor(.red)
+                            } else {
+                                Image(systemName: "circle.fill")
+                                    .foregroundColor(.green)
+                            }
                         }
                     }
                 }
@@ -54,7 +57,10 @@ struct TransactionstView: View {
             .navigationTitle("Transactions")
             .navigationBarTitleDisplayMode(.inline)
             .task {
-                await transactionsVM.getTransactions()
+                if didLoad == false {
+                    await transactionsVM.getTransactions()
+                    didLoad = true
+                }
             }
         }
     }

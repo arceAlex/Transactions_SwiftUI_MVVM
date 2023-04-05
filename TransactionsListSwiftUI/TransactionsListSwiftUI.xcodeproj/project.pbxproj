@@ -8,24 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		ACAAB69029CD9BF200502AE2 /* TransactionsListSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAAB68F29CD9BF200502AE2 /* TransactionsListSwiftUIApp.swift */; };
-		ACAAB69229CD9BF200502AE2 /* TransactionstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAAB69129CD9BF200502AE2 /* TransactionstView.swift */; };
+		ACAAB69229CD9BF200502AE2 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAAB69129CD9BF200502AE2 /* TransactionsView.swift */; };
 		ACAAB69429CD9BF600502AE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACAAB69329CD9BF600502AE2 /* Assets.xcassets */; };
 		ACAAB69729CD9BF600502AE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACAAB69629CD9BF600502AE2 /* Preview Assets.xcassets */; };
 		ACAAB69E29CDA2E600502AE2 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAAB69D29CDA2E600502AE2 /* TransactionModel.swift */; };
 		ACAAB6A029CDA31200502AE2 /* TransactionsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAAB69F29CDA31200502AE2 /* TransactionsApi.swift */; };
 		ACAAB6A229CDA32600502AE2 /* TransactionsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAAB6A129CDA32600502AE2 /* TransactionsVM.swift */; };
+		ACC168DC29DAE6BB004B58AB /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC168DB29DAE6BB004B58AB /* TransactionDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ACAAB68C29CD9BF200502AE2 /* TransactionsListSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransactionsListSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAAB68F29CD9BF200502AE2 /* TransactionsListSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListSwiftUIApp.swift; sourceTree = "<group>"; };
-		ACAAB69129CD9BF200502AE2 /* TransactionstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionstView.swift; sourceTree = "<group>"; };
+		ACAAB69129CD9BF200502AE2 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 		ACAAB69329CD9BF600502AE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACAAB69629CD9BF600502AE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ACAAB69D29CDA2E600502AE2 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		ACAAB69F29CDA31200502AE2 /* TransactionsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsApi.swift; sourceTree = "<group>"; };
 		ACAAB6A129CDA32600502AE2 /* TransactionsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsVM.swift; sourceTree = "<group>"; };
 		ACAAB6A329CDC12C00502AE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACC168DB29DAE6BB004B58AB /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +63,9 @@
 			children = (
 				ACAAB6A329CDC12C00502AE2 /* Info.plist */,
 				ACAAB69F29CDA31200502AE2 /* TransactionsApi.swift */,
+				ACC168DB29DAE6BB004B58AB /* TransactionDetailView.swift */,
 				ACAAB69D29CDA2E600502AE2 /* TransactionModel.swift */,
-				ACAAB69129CD9BF200502AE2 /* TransactionstView.swift */,
+				ACAAB69129CD9BF200502AE2 /* TransactionsView.swift */,
 				ACAAB6A129CDA32600502AE2 /* TransactionsVM.swift */,
 				ACAAB69329CD9BF600502AE2 /* Assets.xcassets */,
 				ACAAB69529CD9BF600502AE2 /* Preview Content */,
@@ -148,9 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACC168DC29DAE6BB004B58AB /* TransactionDetailView.swift in Sources */,
 				ACAAB69E29CDA2E600502AE2 /* TransactionModel.swift in Sources */,
 				ACAAB6A229CDA32600502AE2 /* TransactionsVM.swift in Sources */,
-				ACAAB69229CD9BF200502AE2 /* TransactionstView.swift in Sources */,
+				ACAAB69229CD9BF200502AE2 /* TransactionsView.swift in Sources */,
 				ACAAB69029CD9BF200502AE2 /* TransactionsListSwiftUIApp.swift in Sources */,
 				ACAAB6A029CDA31200502AE2 /* TransactionsApi.swift in Sources */,
 			);
